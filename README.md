@@ -1,18 +1,33 @@
 # dr-pro
-Doctor Pro includes the project I create(d) to learn Protractor: an end-to-end test framework for Angular and AngularJS applications. 
+ Doctor Pro includes the project I create(d) to learn Protractor: an end-to-end test framework for Angular and AngularJS applications. 
 
 Content in this repo is WIP.
 
-#### IDE: <br>
-  Eclipse (Release 4.7.0 (Oxygen))<br><br>
-#### Resources: <br>
+
+ ### Resources: <br>
   https://www.protractortest.org/ <br>
   https://jasmine.github.io/ <br>
+  https://code.visualstudio.com/<br>
   
-  ###### Limitations at this stage:<br>
-  * System under test sould be an angular website (otherwise errors will be thrown when running the tests)
+ ### Limitations at this stage:<br>
+   -System under test sould be an angular website (otherwise errors will be thrown when running the tests)
   
-  ###### Steps to set up 'Run Configurations' in the Eclipse IDE
+ ##### IDE: <br>
+  -Visual Studio Code (Version 1.43.2)<br><br>
+  
+#### Steps to set up and run 'configurations.js' in VS code
+ - open 'dr-pro' in 'VS Code' editor
+ - Select the 'Terminal' in the 'Panel' at the bottom of the editor so that you will be in the file directory where your js files are in <br>
+    ```C:\Users\<username>\<path-todir>\dr-pro> ```<br>
+- Run the command<br>
+    ```protractor .\configuration.js```
+    
+    
+##### IDE: <br>
+  
+  -Eclipse (Release 4.7.0 (Oxygen))<br><br>
+  
+#### Steps to set up 'Run Configurations' in the Eclipse IDE
   
   1. Select Run configurations -> Node.js Application -> <right click> new -> specify the following 3 settings
   - Project (browse and get the project name)
