@@ -33,6 +33,11 @@ Content in this repo is WIP.
   - Project (browse and get the project name)
   - Main file : ``` ${workspace_loc:/doctor-pro/protractor/built/cli.js}``` (Note: this refers to the cli.js file in the protractor folder)'Protractor' folder is already included in this repo. However, if it is needed to get the local protractor folder to the project level: copy the 'protractor' folder from C:\Users\<usrname>\AppData\Roaming\npm\node_modules and paste it to the Eclipse project folder)
   - Arguments (tab) - Application Arguments : configuration (this refers to the configiration.js file in the project)  
+ 
+ #### References:
+ - https://www.protractortest.org/#/timeouts
+ - https://medium.com/@literallywords/things-i-wish-i-knew-about-protractor-before-i-started-84fea284a87f
+ - https://github.com/CarmenPopoviciu/protractor-styleguide
   
   
 
