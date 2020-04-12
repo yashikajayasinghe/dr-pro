@@ -24,6 +24,9 @@ describe('As a TM user I can got to TM main Homepage to perform a search', funct
 			});		
 		})							
 	});
+	/**
+	 * Protractor : actions API
+	 */
 
 	it('go to tm home and search for samsung and select search sugesstions', function(){
 		browser.get("https://www.trademe.co.nz/a");
@@ -43,7 +46,23 @@ describe('As a TM user I can got to TM main Homepage to perform a search', funct
 
 			});				
 		});
-	});		
+	});	
+	/**
+	 * Protractor : switchTo API
+	 */
+	it('go to TM Home page and click on the covid19 banner to open a new browser tab', function(){
+        browser.get("https://www.trademe.co.nz/a");
+        browser.waitForAngularEnabled(false);
+        element(by.css("tm-homepage-announcement a[class*='tm-homepage-announcement__covid-announcement']")).click().then(function(){
+            browser.getAllWindowHandles().then(function(handle){
+                browser.switchTo().window(handle[1]);
+                browser.getTitle().then(function(title){
+                    expect(title).toBe('COVID-19 update: changes to our services - Announcements | Trade Me');
+                });
+            });
+        });
+    });
+	
 		
 	
 		
