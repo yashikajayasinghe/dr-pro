@@ -7,8 +7,10 @@
 exports.config = {
 		seleniumAddress:'http://localhost:4444/wd/hub',
 		capabilities: {
-			'browserName': 'chrome'
+			'browserName': 'chrome',
+			'goog:chromeOptions':{w3c: false}
 		},
 		framework: 'jasmine',		
 		specs:['tm-spec.js']
+		//specs:['practics-core-api-spec.js']
 }
