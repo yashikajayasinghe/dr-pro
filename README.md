@@ -11,6 +11,7 @@ Content in this repo is WIP.
   
  ### Limitations at this stage:<br>
    -System under test sould be an angular website (otherwise errors will be thrown when running the tests)
+   - Protractor's actions API has some issues for mouse - key events (i.e. Key.ENTER) which are not compatible with the latest chrome driver (after chrome 75). Configuration changes were applied to overcome this limitation. (ref: https://github.com/angular/protractor/issues/5285)
   
  ##### IDE: <br>
   -Visual Studio Code (Version 1.43.2)<br><br>
@@ -45,9 +46,3 @@ Content in this repo is WIP.
  - https://medium.com/@literallywords/things-i-wish-i-knew-about-protractor-before-i-started-84fea284a87f
  - https://github.com/CarmenPopoviciu/protractor-styleguide
  - https://devhints.io/jasmine
-
-  
-
-
-
-
