@@ -21,6 +21,12 @@ Content in this repo is WIP.
     ```C:\Users\<username>\<path-todir>\dr-pro> ```<br>
 - Run the command<br>
     ```protractor .\configuration.js```
+- Setup launch.json
+
+- install extensions to support code auto siggestions (Windows: ctrl+sift+x in vscode to open the extensions panel )
+     --Jasmine code snippets
+     --npm Intellisense  
+
     
     
 ##### IDE: <br>
@@ -33,12 +39,13 @@ Content in this repo is WIP.
   - Project (browse and get the project name)
   - Main file : ``` ${workspace_loc:/doctor-pro/protractor/built/cli.js}``` (Note: this refers to the cli.js file in the protractor folder)'Protractor' folder is already included in this repo. However, if it is needed to get the local protractor folder to the project level: copy the 'protractor' folder from C:\Users\<usrname>\AppData\Roaming\npm\node_modules and paste it to the Eclipse project folder)
   - Arguments (tab) - Application Arguments : configuration (this refers to the configiration.js file in the project)  
- 
- #### References:
+
+#### References:
  - https://www.protractortest.org/#/timeouts
  - https://medium.com/@literallywords/things-i-wish-i-knew-about-protractor-before-i-started-84fea284a87f
  - https://github.com/CarmenPopoviciu/protractor-styleguide
-  
+ - bhttps://devhints.io/jasmine
+
   
 
 
