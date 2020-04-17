@@ -11,6 +11,11 @@
      it('go to TM homepage and create a user account successfully', function(){
         browser.get('https://www.trademe.co.nz/a');
         var registerLink = element(by.css("tm-shell-log-in-out a[href*='register']"));
+        
+        
+        //TODO:  generate as a unique username and email to use in an automation suite 
+        var randomUsername = 'ry7rttser12jj'; 
+        var randomEmail = 'ry77887Usrerer12jj@gmail.com';
 
         var elementsOfForm2 = function(){
             var firstName = element(by.css('form tg-input-container input[name="firstName"]'));
@@ -27,6 +32,12 @@
             var over18CheckBox =element(by.css('form tg-checkbox'));
             var buttonCreateAccount = element(by.css('button[type="submit"]'));
             var EC = protractor.ExpectedConditions;
+            var selectedAddress = '';
+            var urlChangedToSuccess = function() {
+                return browser.getCurrentUrl().then(function(url) {
+                return url === 'https://www.trademe.co.nz/a/register/success';
+                });
+            };
 
                 firstName.sendKeys('eufhdfh');
                 lastName.sendKeys('hfgsdfhjsdf');
@@ -35,18 +46,28 @@
                 dob_year.sendKeys('1993');
                 phoneNumber_serviceProvider.$('[value="7: 022"]').click();;
                 phoneNumber_digits.sendKeys('3145654');
-                gender.get(1).click();
-                address.sendKeys('17 Cli').then(function(){
-                    //browser.sleep(3000);
+                gender.get(0).click();
+                address.sendKeys('17 Car').then(function(){
+                   
                     browser.wait(EC.visibilityOf(address_searchDropDown), 5000);
+                    address_searchDropDown.$('tg-rack-item-primary div').getText().then(function(text){
+                        selectedAddress = text;
+                        
+                    });
+                   
                     address_searchDropDown.click();
                 });
+                address.sendKeys(selectedAddress);                
                 browser.wait(EC.invisibilityOf(address_searchDropDown), 5000);
                 closestTown.$('[value="86"]').click(); // Canterbury - Christchurch City 
         
                 over18CheckBox.click();
-                buttonCreateAccount.click();
-                browser.sleep(7000);
+                buttonCreateAccount.click().then(function(){
+                    browser.wait(urlChangedToSuccess, 5000);                    
+                    var ExpectedSuccessMsg = 'Hey eufhdfh, welcome to Trade Me!';
+                    expect($('tm-register-success h1').getText()).toBe(ExpectedSuccessMsg);
+                });
+               
         }
 
         var urlChanged = function() {
@@ -66,10 +87,10 @@
             
             var EC = protractor.ExpectedConditions;
 
-            email.sendKeys('fghfjfj23hsfrew@gmail.com');
+            email.sendKeys(randomEmail);
             password.sendKeys('abc123!@#');
             confPassword.sendKeys('abc123!@#');
-            username.sendKeys('fghfjfj23hsfrew');
+            username.sendKeys(randomUsername);
             country.get(0).click();          
             browser.sleep(5000);
             browser.wait(EC.elementToBeClickable(buttonNextStep),5000);    
@@ -78,9 +99,6 @@
                 browser.wait(urlChanged, 6000);                          
                 elementsOfForm2();
            });
-
-
-
         }
         
         
