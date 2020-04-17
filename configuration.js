@@ -11,6 +11,7 @@ exports.config = {
 			'goog:chromeOptions':{w3c: false}
 		},
 		framework: 'jasmine',		
-		specs:['tm-spec.js']
+		//specs:['tm-spec.js']
 		//specs:['practics-core-api-spec.js']
+		specs:['tm-register-new-user-spec.js']
 }
